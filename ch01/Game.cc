@@ -51,6 +51,11 @@ void Game::ProcessInput() {
                 break;
         }
     }
+
+    auto state = SDL_GetKeyboardState(nullptr);
+    if (state[SDL_SCANCODE_ESCAPE]) {
+        IsRunning_ = false;
+    }
 }
 
 void Game::UpdateGame() {}
