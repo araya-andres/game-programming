@@ -8,7 +8,7 @@ bool Game::Initialize() {
         return false;
     }
     Window_ = SDL_CreateWindow(
-            "Title",
+            "Pong",
             100, 100,
             1024, 768,
             0
@@ -60,4 +60,8 @@ void Game::ProcessInput() {
 
 void Game::UpdateGame() {}
 
-void Game::GenerateOutput() {}
+void Game::GenerateOutput() {
+    SDL_SetRenderDrawColor(Renderer_, 0, 0, 255, 255);
+    SDL_RenderClear(Renderer_);
+    SDL_RenderPresent(Renderer_);
+}
